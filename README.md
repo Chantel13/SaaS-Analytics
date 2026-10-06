@@ -122,7 +122,7 @@ SELECT
 FROM LostRevenue;
 ```
 
-The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
+The analysis identified 5.82% (1,074) failed payments and 2.76% (499) refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
 ```sql
 --Which issue types generate the most tickets
