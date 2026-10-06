@@ -1,18 +1,5 @@
 # SaaS Customer and Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
-
-SELECT
-    YEAR(PaymentDate) AS RevenueYear,
-    DATEPART(QUARTER, PaymentDate) AS RevenueQuarter,
-    SUM(NetAmount) AS QuarterlyRevenue
-FROM Payments
-WHERE PaymentStatus = 'Completed'
-GROUP BY
-    YEAR(PaymentDate),
-    DATEPART(QUARTER, PaymentDate)
-ORDER BY
-    RevenueYear,
-    RevenueQuarter;
     
 ## Executive Summary
 
