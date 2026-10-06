@@ -3,15 +3,11 @@
 
 ## Executive Summary
 
-This project looks at a SaaS business from a practical business perspective: **how are customers being acquired, how are subscriptions performing, where is revenue coming from, and where might the business be losing value?**
+This project analyses a SaaS business to understand customer acquisition, subscription retention, revenue performance and potential revenue leakage.
 
-The analysis identified several areas that could affect sustainable growth. Revenue is being generated across multiple quarters, plans and acquisition channels, but the high number of cancelled subscriptions, payment failures and billing-related support issues suggest that retaining customers and protecting existing revenue are important priorities.
+The analysis found strong revenue growth from 2023 to 2025, but also a high volume of cancelled subscriptions and significant payment and billing issues. The key business priorities are therefore to improve retention, protect recurring revenue, strengthen the billing experience and measure acquisition by long-term customer value.
 
-The main solutions are to strengthen retention analysis, improve the payment and billing experience, and measure acquisition based on **long-term customer value rather than customer volume alone**.
-
-There are also limitations. The dataset is historical, the 77% cancelled-subscription figure should not be treated as a formal churn rate, and the available data does not fully explain why customers cancel or how much value individual customers generate over their lifetime.
-
-The next step would be to move from understanding **what happened** to understanding **why it happened** through cohort retention, customer lifetime value, cancellation analysis and payment-failure analysis. The analysis can then be developed into an interactive Power BI solution for ongoing business monitoring.
+The analysis is based on historical data and cannot establish why customers cancel or whether identified relationships are causal. The next step is to investigate customer tenure, cancellation drivers, payment failures, product usage and customer lifetime value, then develop the analysis into an interactive Power BI solution.
 
 ## Business Problem
 
@@ -74,7 +70,13 @@ Pivot tables and charts were then used to identify trends and communicate the ma
 
 ### 1. Revenue shows continued growth across the quarters analysed
 
+![Quarterly Revenue](quarterly-revenue.png)
+
 The quarterly revenue analysis shows that the business generated revenue across the period, with stronger quarters contributing significantly to overall performance.
+
+Revenue increased from just R53.1k in 2023 Q1 to R728.2k in Q4. By 2025, quarterly revenue reached its highest point of R1.47m in Q4.
+
+In 2026, revenue started strongly at R1.42m in Q1, but declined to R1.28m in Q2 and R727.1k in Q3.
 
 The quarterly view provides a more useful picture of how revenue changes over time than simply comparing full calendar years. It also makes it easier to identify periods of stronger or weaker performance that may require further investigation.
 
@@ -84,11 +86,11 @@ The business is generating meaningful revenue, but understanding the reasons beh
 **Recommended action:**  
 Monitor quarterly revenue alongside customer acquisition, cancellations, payment failures and plan performance to understand what is driving changes in revenue.
 
-![Quarterly Revenue](quarterly-revenue.png)
-
 ---
 
 ### 2. Subscription cancellations are the biggest retention concern
+
+![Subscription Status](subscription-status.png)
 
 There are 3,300 recorded subscriptions, with 772 active and 2,528 cancelled. This means approximately 77% of recorded subscriptions have a cancelled status.
 
@@ -100,11 +102,11 @@ Customer retention is an important area for further investigation.
 **Recommended action:**  
 Analyse cancellation by customer tenure, acquisition channel, industry, plan, product usage and payment history to identify potential drivers of cancellation.
 
-![Subscription Status](subscription-status.png)
-
 ---
 
 ### 3. Payment and billing issues may be affecting customer value
+
+![Payment Issues](Payment-issues.png)
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
@@ -116,11 +118,11 @@ Payment and billing problems appear in both the financial and customer-support d
 **Recommended action:**  
 Improve failed-payment notifications and payment retries, monitor repeated payment failures, investigate refund reasons and determine whether payment problems are followed by subscription cancellations.
 
-![Payment Issues](payment-issues.png)
-
 ---
 
 ### 4. Acquisition should be measured by customer value, not only volume
+
+![Acquisition Channels](Acquisition-channels.png)
 
 Referral and Organic Search were among the strongest acquisition channels, with 526 and 525 customers respectively.
 
@@ -131,8 +133,6 @@ The channel bringing in the most customers is not necessarily the channel creati
 
 **Recommended action:**  
 Evaluate acquisition channels using a broader view of performance: **acquisition cost → retention → revenue → customer lifetime value.**
-
-![Acquisition Channels](acquisition-channels.png)
 
 ## Overall Business Priorities
 
