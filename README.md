@@ -1,21 +1,22 @@
 # SaaS Customer and Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
 
+```sql
+-- What percentage of payment value is associated with failed and refunded payments
+WITH LostRevenue AS
+(
     SELECT
-    
-    SUM(NetAmount) AS NetRevenue,
+        SUM(NetAmount) NetRevenue,
+        SUM(CASE WHEN PaymentStatus = 'Failed' THEN NetAmount END) FailedPayments,
+        SUM(CASE WHEN PaymentStatus = 'Refunded' THEN NetAmount END) RefundedPayments
+    FROM Payments
+)
+SELECT
+    FailedPayments * 1.0 / NetRevenue * 100 FailedPayment,
+    RefundedPayments * 1.0 / NetRevenue * 100 RefundedPayment
+FROM LostRevenue;
+```
 
-    SUM(CASE
-        WHEN PaymentStatus = 'Failed'
-        THEN NetAmount
-    END) AS FailedPayments,
-
-    SUM(CASE
-        WHEN PaymentStatus = 'Refunded'
-        THEN NetAmount
-    END) AS RefundedPayments
-
-   FROM Payments;
 ## Executive Summary
 
 This project analyses a SaaS business to understand customer acquisition, subscription retention, revenue performance and potential revenue leakage.
