@@ -1,5 +1,6 @@
 # SaaS Customer and Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
+
     SELECT
     SUM(NetAmount) AS NetRevenue,
 
