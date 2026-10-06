@@ -70,6 +70,7 @@ Pivot tables and charts were then used to identify trends and communicate the ma
 
 ### 1. Revenue shows continued growth across the quarters analysed
 
+<img src="quarterly-revenue.png" width="600">
 ![Quarterly Revenue](quarterly-revenue.png)
 
 The quarterly revenue analysis shows that the business generated revenue across the period, with stronger quarters contributing significantly to overall performance.
