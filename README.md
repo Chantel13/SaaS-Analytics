@@ -124,6 +124,7 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 -- What percentage of payment value is associated with failed and refunded payments?
 
 WITH LostRevenue AS
+
 (
     SELECT
     
