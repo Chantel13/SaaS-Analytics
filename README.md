@@ -1,4 +1,4 @@
-# SaaS Customer & Subscription Analysis
+# SaaS Customer and Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
 
 ## Executive Summary
@@ -66,7 +66,7 @@ Excel and XLOOKUP were used to bring related data together for visualisation.
 
 Pivot tables and charts were then used to identify trends and communicate the main findings through a business dashboard.
 
-## Key Findings & Business Actions
+## Key Findings and Business Actions
 
 ### 1. Revenue shows continued growth across the quarters analysed
 
