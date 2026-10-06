@@ -106,7 +106,21 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 
 ### 3. Payment and billing issues may be affecting customer value
 
-<img src="payment-issues.png" width="600">
+-- What percentage of payment value is associated with
+-- failed and refunded payments?
+
+WITH LostRevenue AS
+(
+    SELECT
+        SUM(NetAmount) AS NetRevenue,
+        SUM(CASE WHEN PaymentStatus = 'Failed' THEN NetAmount END) AS FailedPayments,
+        SUM(CASE WHEN PaymentStatus = 'Refunded' THEN NetAmount END) AS RefundedPayments
+    FROM Payments
+)
+SELECT
+    FailedPayments * 1.0 / NetRevenue * 100 AS FailedPaymentPercentage,
+    RefundedPayments * 1.0 / NetRevenue * 100 AS RefundedPaymentPercentage
+FROM LostRevenue;
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
