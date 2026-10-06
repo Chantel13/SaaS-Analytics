@@ -71,7 +71,6 @@ Pivot tables and charts were then used to identify trends and communicate the ma
 ### 1. Revenue shows continued growth across the quarters analysed
 
 <img src="quarterly-revenue.png" width="600">
-![Quarterly Revenue](quarterly-revenue.png)
 
 The quarterly revenue analysis shows that the business generated revenue across the period, with stronger quarters contributing significantly to overall performance.
 
@@ -91,7 +90,7 @@ Monitor quarterly revenue alongside customer acquisition, cancellations, payment
 
 ### 2. Subscription cancellations are the biggest retention concern
 
-![Subscription Status](subscription-status.png)
+<img src="subscription-status.png" width="600">
 
 There are 3,300 recorded subscriptions, with 772 active and 2,528 cancelled. This means approximately 77% of recorded subscriptions have a cancelled status.
 
@@ -107,7 +106,7 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 
 ### 3. Payment and billing issues may be affecting customer value
 
-![Payment Issues](Payment-issues.png)
+<img src="Payment-issues.png" width="600">
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
@@ -123,7 +122,7 @@ Improve failed-payment notifications and payment retries, monitor repeated payme
 
 ### 4. Acquisition should be measured by customer value, not only volume
 
-![Acquisition Channels](Acquisition-channels.png)
+<img src="Acquisition-channels.png" width="600">
 
 Referral and Organic Search were among the strongest acquisition channels, with 526 and 525 customers respectively.
 
