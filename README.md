@@ -126,6 +126,7 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 WITH LostRevenue AS
 
 (
+
     SELECT
     
         SUM(NetAmount) AS NetRevenue,
@@ -140,13 +141,14 @@ WITH LostRevenue AS
         
     FROM Payments
 )
+
 SELECT
 
     FailedPayments * 1.0 / NetRevenue * 100 AS FailedPaymentPercentage,
     
     RefundedPayments * 1.0 / NetRevenue * 100 AS RefundedPaymentPercentage
     
-FROM LostRevenue;
+    FROM LostRevenue;
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
