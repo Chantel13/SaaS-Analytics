@@ -106,7 +106,7 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 
 ### 3. Payment and billing issues may be affecting customer value
 
-<img src="Payment-issues.png" width="600">
+<img src="payment-issues.png" width="600">
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
@@ -122,7 +122,7 @@ Improve failed-payment notifications and payment retries, monitor repeated payme
 
 ### 4. Acquisition should be measured by customer value, not only volume
 
-<img src="Acquisition-channels.png" width="600">
+<img src="acquisition-channels.png" width="600">
 
 Referral and Organic Search were among the strongest acquisition channels, with 526 and 525 customers respectively.
 
