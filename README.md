@@ -1,6 +1,19 @@
 # SaaS Customer and Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
-    
+    SELECT
+    SUM(NetAmount) AS NetRevenue,
+
+    SUM(CASE
+        WHEN PaymentStatus = 'Failed'
+        THEN NetAmount
+    END) AS FailedPayments,
+
+    SUM(CASE
+        WHEN PaymentStatus = 'Refunded'
+        THEN NetAmount
+    END) AS RefundedPayments
+
+FROM Payments;
 ## Executive Summary
 
 This project analyses a SaaS business to understand customer acquisition, subscription retention, revenue performance and potential revenue leakage.
