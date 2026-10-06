@@ -2,6 +2,7 @@
 **SQL | Excel | Data Analysis | Business Reporting**
 
     SELECT
+    
     SUM(NetAmount) AS NetRevenue,
 
     SUM(CASE
@@ -14,7 +15,7 @@
         THEN NetAmount
     END) AS RefundedPayments
 
-FROM Payments;
+   FROM Payments;
 ## Executive Summary
 
 This project analyses a SaaS business to understand customer acquisition, subscription retention, revenue performance and potential revenue leakage.
@@ -125,6 +126,7 @@ Analyse cancellation by customer tenure, acquisition channel, industry, plan, pr
 WITH LostRevenue AS
 (
     SELECT
+    
         SUM(NetAmount) AS NetRevenue,
         
         SUM(CASE
@@ -134,12 +136,15 @@ WITH LostRevenue AS
         SUM(CASE
             WHEN PaymentStatus = 'Refunded' THEN NetAmount
         END) AS RefundedPayments
+        
     FROM Payments
 )
 SELECT
+
     FailedPayments * 1.0 / NetRevenue * 100 AS FailedPaymentPercentage,
     
     RefundedPayments * 1.0 / NetRevenue * 100 AS RefundedPaymentPercentage
+    
 FROM LostRevenue;
 
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
