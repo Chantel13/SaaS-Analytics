@@ -185,7 +185,7 @@ SaaS-Analytics/
 
 ### Dashboard Preview
 
-![SaaS Business Analytics Dashboard](SaaS%20Business%20Analytics%20Dashboard.png)
+<img src="SaaS%20Business%20Analytics%20Dashboard.png" width="600">
 
 ## Final Takeaway
 
