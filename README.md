@@ -125,7 +125,13 @@ FROM LostRevenue;
 The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
 ```sql
-
+--Which issue types generate the most tickets
+SELECT 
+	IssueType,
+	COUNT(*) NumberOfSupportTickets
+FROM SupportTickets
+GROUP BY IssueType
+ORDER BY NumberOfSupportTickets DESC;
 ```
 
 Billing was also the most common support issue, with 856 tickets, while its average satisfaction score was approximately 2.9 out of 5.
