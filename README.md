@@ -126,9 +126,11 @@ WITH LostRevenue AS
 (
     SELECT
         SUM(NetAmount) AS NetRevenue,
+        
         SUM(CASE
             WHEN PaymentStatus = 'Failed' THEN NetAmount
         END) AS FailedPayments,
+        
         SUM(CASE
             WHEN PaymentStatus = 'Refunded' THEN NetAmount
         END) AS RefundedPayments
@@ -136,6 +138,7 @@ WITH LostRevenue AS
 )
 SELECT
     FailedPayments * 1.0 / NetRevenue * 100 AS FailedPaymentPercentage,
+    
     RefundedPayments * 1.0 / NetRevenue * 100 AS RefundedPaymentPercentage
 FROM LostRevenue;
 
