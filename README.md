@@ -1,237 +1,198 @@
-SaaS Customer & Subscription Analysis
-
+# SaaS Customer & Subscription Analysis
 **SQL | Excel | Data Analysis | Business Reporting**
 
-## Project Overview
+## Executive Summary
 
-This project analyses a SaaS business to understand how customers are acquired, how subscriptions perform, where revenue is generated, and where the business may be losing value through cancellations, payment issues and customer support challenges.
+This project looks at a SaaS business from a practical business perspective: **how are customers being acquired, how are subscriptions performing, where is revenue coming from, and where might the business be losing value?**
 
-The analysis covers **January 2023 to August 2026** and uses multiple related datasets covering customers, subscriptions, payments, product usage, support tickets and marketing campaigns.
+The analysis identified several areas that could affect sustainable growth. Revenue is being generated across multiple quarters, plans and acquisition channels, but the high number of cancelled subscriptions, payment failures and billing-related support issues suggest that retaining customers and protecting existing revenue are important priorities.
 
-The goal was not only to identify what happened, but to translate the findings into practical business actions and identify what should be investigated next.
+The main solutions are to strengthen retention analysis, improve the payment and billing experience, and measure acquisition based on **long-term customer value rather than customer volume alone**.
 
----
+There are also limitations. The dataset is historical, the 77% cancelled-subscription figure should not be treated as a formal churn rate, and the available data does not fully explain why customers cancel or how much value individual customers generate over their lifetime.
 
-## The Business Questions
+The next step would be to move from understanding **what happened** to understanding **why it happened** through cohort retention, customer lifetime value, cancellation analysis and payment-failure analysis. The analysis can then be developed into an interactive Power BI solution for ongoing business monitoring.
 
-The analysis focused on a few key questions:
+## Business Problem
+
+### Why did I do this project?
+
+A SaaS business can acquire a large number of customers and generate strong revenue, but that does not necessarily mean the business is growing sustainably.
+
+Customers can cancel their subscriptions, payment failures can interrupt revenue, refunds can reduce realised income, and support problems can affect the customer experience. At the same time, an acquisition channel that brings in many customers may not necessarily bring in customers who stay longer or generate more revenue.
+
+I wanted to use a realistic relational dataset to look beyond individual numbers and understand how these different parts of a SaaS business connect.
+
+### What problem am I trying to solve?
+
+The main problem is **understanding whether customer acquisition and revenue growth are translating into sustainable customer value**.
+
+The analysis therefore focuses on four areas:
+
+- **Customer growth** — how customers are being acquired and which channels contribute the most.
+- **Subscription performance** — how many subscriptions remain active and how many have been cancelled.
+- **Revenue and payment health** — where revenue is being generated and whether payment failures or refunds may be creating value leakage.
+- **Customer experience** — whether support issues, particularly billing-related problems, may be affecting customers.
+
+The goal is not simply to report numbers. It is to turn the data into practical questions the business can act on: **Where should retention efforts be focused? Which customers and channels create the most value? Where could revenue be leaking? And what should the business investigate next?**
+
+## Business Questions
 
 - How is the customer base growing?
-- Which plans, industries and channels contribute most to revenue?
+- Which plans, industries and acquisition channels contribute most to revenue?
 - How significant are subscription cancellations?
 - Are payment failures and refunds creating potential revenue leakage?
-- Where are customer support issues concentrated?
+- Where are support issues concentrated?
 - How can the business improve retention and sustainable growth?
-
----
 
 ## Methodology
 
 ### SQL Analysis
 
-I used SQL Server to analyse the relational datasets and answer the business questions.
+SQL Server was used to analyse the related customer, subscription, payment, product usage, support and marketing data.
 
-The analysis included:
+The analysis used:
 
-- `JOIN` to connect related customer, subscription, payment, usage and support data
-- `COUNT`, `SUM` and `AVG` for business metrics
-- `GROUP BY` and `ORDER BY` for comparisons and rankings
-- `CASE` statements for conditional calculations
-- `DATEDIFF` for support resolution analysis
-- `YEAR`, `MONTH` and `DATENAME` for time-based analysis
-- Subqueries and `CTE`s for more complex calculations
-- Data quality checks to identify duplicates, invalid values, missing dates and inconsistent records
+- JOINs
+- COUNT, SUM and AVG
+- GROUP BY and ORDER BY
+- CASE statements
+- DATEDIFF
+- YEAR, MONTH and DATENAME
+- Subqueries and CTEs
+- Data quality checks for duplicates, invalid values, missing dates and inconsistent records
 
-The analysis was structured around business questions rather than simply applying SQL functions for their own sake.
+The analysis was structured around business questions rather than simply demonstrating SQL functions.
 
 ### Excel Visualisation
 
-After completing the SQL analysis, I used Excel to bring information from the related datasets together using **XLOOKUP** and create a consolidated analysis for visualisation.
+Excel and XLOOKUP were used to bring related data together for visualisation.
 
-I then used pivot tables, charts and dashboard elements to communicate the most important results in a more accessible way.
-
----
+Pivot tables and charts were then used to identify trends and communicate the main findings through a business dashboard.
 
 ## Key Findings & Business Actions
 
-### 1. Revenue is growing, but sustainable growth depends on retention
+### 1. Revenue shows continued growth across the quarters analysed
 
-Net revenue reached approximately **R13.99 million** across the analysis period.
+The quarterly revenue analysis shows that the business generated revenue across the period, with stronger quarters contributing significantly to overall performance.
 
-Revenue increased from:
+The quarterly view provides a more useful picture of how revenue changes over time than simply comparing full calendar years. It also makes it easier to identify periods of stronger or weaker performance that may require further investigation.
 
-- **R1.62m in 2023**
-- **R4.03m in 2024**
-- **R4.90m in 2025**
-- **R3.42m through August 2026**
+**What this means:**  
+The business is generating meaningful revenue, but understanding the reasons behind quarterly changes is important if management wants to plan for more consistent and sustainable growth.
 
-The Business plan generated the highest plan-level revenue at approximately **R4.39m**, while Retail generated approximately **R2.73m** in industry revenue.
+**Recommended action:**  
+Monitor quarterly revenue alongside customer acquisition, cancellations, payment failures and plan performance to understand what is driving changes in revenue.
 
-**What this means:**
-The business has established strong revenue generation, but protecting existing recurring revenue becomes increasingly important as the customer base grows.
-
-**Recommended action:**
-Monitor recurring revenue and higher-value plan customers regularly, particularly customers showing signs of reduced usage or cancellation.
-
-> *Note: 2026 covers January–August only and should therefore not be compared directly with full-year figures.*
+![Quarterly Revenue](quarterly-revenue.png)
 
 ---
 
 ### 2. Subscription cancellations are the biggest retention concern
 
-The dataset contains **3,300 subscriptions**, including:
+There are 3,300 recorded subscriptions, with 772 active and 2,528 cancelled. This means approximately 77% of recorded subscriptions have a cancelled status.
 
-- **772 active**
-- **2,528 cancelled**
+However, this should **not** be interpreted as a formal churn rate because subscriptions started at different times.
 
-Approximately **77% of recorded subscriptions are cancelled**. Cancellation levels are also relatively similar across the different plans.
+**What this means:**  
+Customer retention is an important area for further investigation.
 
-**What this means:**
-The finding highlights a clear retention concern, but the 77% figure should **not automatically be interpreted as a current churn rate**, because subscriptions began at different points in time.
+**Recommended action:**  
+Analyse cancellation by customer tenure, acquisition channel, industry, plan, product usage and payment history to identify potential drivers of cancellation.
 
-**Recommended action:**
-The next analysis should investigate:
-
-- Customer tenure before cancellation
-- Cancellation by acquisition channel
-- Cancellation by industry and customer segment
-- Usage before cancellation
-- Payment failures followed by cancellation
-
-This would help identify **which customers are most at risk and why they leave**.
+![Subscription Status](subscription-status.png)
 
 ---
 
 ### 3. Payment and billing issues may be affecting customer value
 
-The payment data contains:
+The analysis identified 1,074 failed payments and 499 refunds. Failed payments were associated with approximately R813,604, while refunds were associated with approximately R385,799.
 
-- **1,074 failed payments**
-- **499 refunds**
-- Approximately **R813,604** associated with failed payments
-- Approximately **R385,799** associated with refunds
+Billing was also the most common support issue, with 856 tickets, while its average satisfaction score was approximately 2.9 out of 5.
 
-Billing was also the most common support issue, with **856 tickets**, and had the lowest average satisfaction among the major issue categories at approximately **2.9/5**.
-
-**What this means:**
+**What this means:**  
 Payment and billing problems appear in both the financial and customer-support data, making them an important area to investigate.
 
-**Recommended action:**
+**Recommended action:**  
+Improve failed-payment notifications and payment retries, monitor repeated payment failures, investigate refund reasons and determine whether payment problems are followed by subscription cancellations.
 
-- Introduce automated payment retries
-- Notify customers when payments fail
-- Monitor repeated payment failures
-- Investigate the main causes of refunds
-- Analyse whether payment failures are followed by cancellations
-- Investigate recurring billing-related support issues
-
-The aim would be to distinguish temporary payment problems from genuine customer dissatisfaction.
+![Payment Issues](payment-issues.png)
 
 ---
 
 ### 4. Acquisition should be measured by customer value, not only volume
 
-Referral and Organic Search were among the largest acquisition channels, bringing in **526** and **525 customers** respectively.
+Referral and Organic Search were among the strongest acquisition channels, with 526 and 525 customers respectively.
 
-They also generated approximately:
+Referral generated approximately R2.97 million in net revenue, while Organic Search generated approximately R2.82 million.
 
-- **R2.97m** in net revenue from Referral
-- **R2.82m** from Organic Search
+**What this means:**  
+The channel bringing in the most customers is not necessarily the channel creating the most long-term value.
 
-Campaign acquisition costs varied considerably.
+**Recommended action:**  
+Evaluate acquisition channels using a broader view of performance: **acquisition cost → retention → revenue → customer lifetime value.**
 
-**What this means:**
-Acquiring more customers does not necessarily mean acquiring more valuable customers.
-
-**Recommended action:**
-Evaluate acquisition performance across the full customer journey:
-
-**Acquisition Cost → Retention → Revenue → Customer Lifetime Value**
-
-This would provide a better view of which channels and campaigns are contributing to sustainable growth.
-
----
+![Acquisition Channels](acquisition-channels.png)
 
 ## Overall Business Priorities
 
-Based on the analysis, I would focus the next stage of the project on four areas:
+Based on the analysis, the main priorities are:
 
-1. **Improve customer retention** by understanding why and when customers cancel.
-2. **Protect recurring revenue** by monitoring cancellations, payment failures and refunds together.
-3. **Improve the billing experience** by investigating recurring billing issues and support dissatisfaction.
-4. **Measure acquisition quality** by connecting acquisition costs with retention and customer value.
-
----
+1. **Improve customer retention**
+2. **Protect recurring revenue**
+3. **Improve the payment and billing experience**
+4. **Measure acquisition quality and long-term customer value**
 
 ## Limitations
 
-There were several limitations to the current analysis:
-
-- The dataset is historical and represents the available data rather than a live business environment.
-- The **77% cancelled-subscription figure is not treated as a formal churn rate** because subscription start dates vary.
+- The dataset is historical rather than live.
+- The 77% cancelled-subscription figure is not a formal churn rate because subscription start dates vary.
 - The analysis identifies patterns and relationships but does not establish causation.
-- More detailed customer tenure, cancellation-reason and customer-lifetime-value analysis would be needed to explain *why* customers leave.
-- The Excel dashboard is **static**, so users cannot dynamically filter and drill into individual customer segments or other dimensions.
-
-These limitations also helped identify the next analytical questions rather than being treated as problems with the project.
-
----
+- The dataset does not provide enough information to fully explain why customers cancel.
+- Customer lifetime value and detailed cancellation reasons would provide deeper insight.
+- The current Excel dashboard is static and does not provide interactive filtering or drill-down.
 
 ## Next Steps
 
-To take the project further, I would:
+The next stage of analysis would focus on understanding **why** the patterns identified in this project are occurring.
 
-### Analytical
+This could include:
 
-- Build a cohort retention analysis
-- Analyse customer tenure before cancellation
-- Connect payment failures with subsequent cancellations
-- Analyse feature usage against retention
-- Calculate Customer Lifetime Value (CLV)
-- Compare acquisition cost with long-term customer value
+- Cohort retention analysis
+- Customer tenure before cancellation
+- Payment failures compared with cancellations
+- Product usage compared with retention
+- Customer lifetime value
+- Acquisition cost compared with long-term customer value
+- Cancellation reasons and customer segments
 
-### BI
-
-Rebuild the Excel dashboard in **Power BI** with:
-
-- Interactive filters
-- Drill-down analysis
-- Dynamic KPIs
-- Customer, plan and industry segmentation
-- Retention and revenue monitoring
-
-This would turn the current static analysis into a more interactive business intelligence solution.
-
----
+From a BI perspective, the analysis can then be developed into an interactive Power BI solution with dynamic KPIs, filters, segmentation and drill-down capabilities.
 
 ## Project Deliverables
-```
+
+```text
 SaaS-Analytics/
 │
 ├── README.md
 ├── SaaS_Analysis.sql
 ├── SaaS_Dashboard.xlsx
 ├── Business_Report.pdf
-└── images/
-    └── SaaS Business Analytics Dashboard.png
+├── quarterly-revenue.png
+├── subscription-status.png
+├── payment-issues.png
+└── acquisition-channels.png
 ```
 
 ### Dashboard Preview
 
 ![SaaS Business Analytics Dashboard](SaaS%20Business%20Analytics%20Dashboard.png)
 
----
-
 ## Final Takeaway
 
-The analysis shows a SaaS business with **strong revenue generation, a growing customer base and broad product usage**.
+The analysis shows a SaaS business generating meaningful revenue across multiple plans and acquisition channels, but sustainable growth depends on more than acquiring customers.
 
-The bigger opportunity is making that growth sustainable.
+The biggest opportunities are to **retain customers, reduce payment and billing problems, protect recurring revenue and understand which acquisition channels create the most valuable customers**.
 
-Rather than focusing only on acquiring more customers, the analysis points towards **retention, payment reliability, billing experience and customer value** as areas that deserve further attention.
-
-The next stage would therefore be to move from understanding **what happened** to understanding **why it happened**, and then use those insights to support better retention, revenue and customer experience decisions.
-
----
+The next step is to move beyond describing what happened and investigate why it happened, creating stronger insights that can support better retention, revenue and customer experience decisions.
 
 **Tools:** SQL Server | Excel | XLOOKUP | Pivot Tables | Data Visualisation | Business Analysis
