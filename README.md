@@ -74,9 +74,9 @@ Pivot tables and charts were then used to identify trends and communicate the ma
 
 The quarterly revenue analysis shows that the business generated revenue across the period, with stronger quarters contributing significantly to overall performance.
 
-Revenue increased from just R53.1k in 2023 Q1 to R728.2k in Q4. By 2025, quarterly revenue reached its highest point of R1.47m in Q4.
+Revenue increased from just R53.1k in the first quarter of 2023 to R728.2k in the 4th quarter. By 2025, quarterly revenue reached its highest point of R1.47m in the 4th quarter.
 
-In 2026, revenue started strongly at R1.42m in Q1, but declined to R1.28m in Q2 and R727.1k in Q3.
+In 2026, revenue started strongly at R1.42m in the first quarter, but declined to R1.28m in the second quarter and R727.1k in the third quater.
 
 The quarterly view provides a more useful picture of how revenue changes over time than simply comparing full calendar years. It also makes it easier to identify periods of stronger or weaker performance that may require further investigation.
 
